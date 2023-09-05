@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Mostre que esteve aqui</h1>
+    
+    <form method="POST" action="{{ url_for('webui.index') }}">
+        <label for="name">Seu nome:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <h2>Lista de nomes:</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</div>
+{% endblock %}
